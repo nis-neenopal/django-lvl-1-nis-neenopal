@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog Portal</title>
+</head>
+<body>
+    <h1>My Project</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Created At</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for blog in blogs %}
+                <tr>
+                    <td>{{ blog.pk }}</td>
+                    <td>{{ blog.title }}</td>
+                    <td>{{ blog.created_date }}</td>
+                    <td><a href="{% url 'blog_detail' blog_id=blog.pk %}">View</a></td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No published blogs available.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ blog.title }}</title>
+</head>
+<body>
+    <h1>{{ blog.title }}</h1>
+    <img src="{{ blog.cover_image.url }}" alt="{{ blog.title }} Cover Image" width="500" height="300">
+    <p style="text-align: right;">Created Date: {{ blog.created_date }}</p>
+    <p><strong>{{ blog.title }}</strong></p>
+    <p>{{ blog.content }}</p>
+</body>
+</html>
